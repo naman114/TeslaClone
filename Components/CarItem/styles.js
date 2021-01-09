@@ -1,11 +1,10 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 const styles = StyleSheet.create({
     carContainer: {
-        // Takes up full space of the container
-        height: '100%',
+        // Now it shouldn't take all the space of its parent as now the parent is FlatList and 100% height is not suitable in a list
+        height: Dimensions.get('window').height,
         width: '100%',
-        
       },
       titles:{
         alignItems: 'center',

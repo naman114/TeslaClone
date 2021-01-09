@@ -10,7 +10,8 @@ import StyledButton from '../StyledButton';
 
 const CarItem = (props) => {
 
-    const {name, tagline, taglineCTA, image} = props; 
+    const {name, tagline, taglineCTA, image} = props.car; 
+    // All the above info is sent in an onject called car
 
     return (
     /* A view is similar to div in web or Container in flutter. This is the outermost one */
