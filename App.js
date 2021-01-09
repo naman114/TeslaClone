@@ -9,12 +9,18 @@ export default function App() {
     <View style={styles.container}>
       
       {/* CarItem can now be used just as any other import */}
-      <CarItem/> 
+      <CarItem 
+      name={'Model 3'} 
+      tagline={'Order Online for'}
+      taglineCTA={'Touchless Delivery'} 
+      image={require('./assets/images/Model3.jpeg')}
+      /> 
 
       <StatusBar style="auto" />
     </View>
   );
 }
+// CTA: Call to action
 
 const styles = StyleSheet.create({
   container: {

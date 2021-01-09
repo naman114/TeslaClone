@@ -9,18 +9,31 @@ import styles from './styles'
 import StyledButton from '../StyledButton';
 
 const CarItem = (props) => {
+
+    const {name, tagline, taglineCTA, image} = props; 
+
     return (
     /* A view is similar to div in web or Container in flutter. This is the outermost one */
       <View style={styles.carContainer}>
-        <ImageBackground source={require('../../assets/images/ModelS.jpeg')} style={styles.image}/>
+        <ImageBackground source={image} style={styles.image}/>
         {/* ../ allows us to go one directory up */}   
         <View style={styles.titles}>
-          <Text style={styles.title}>Model S</Text>
-          <Text style={styles.subtitle}>Starting at $69,420</Text>
+          <Text style={styles.title}>{name}</Text>
+          <Text style={styles.subtitle}>
+            {tagline}
+            {' '} 
+            {/* ^Javascipt white space */}
+            {/* Nesting of Text */}
+            <Text style={styles.subtitleCTA}>
+              {taglineCTA}
+            </Text>
+          </Text>
         </View>
 
-        <StyledButton type='primary' content='Custom Order' onPress={()=>{console.warn('Custom Order Was Pressed');}}/>
-        <StyledButton type='secondary' content='Existing Inventory' onPress={()=>{console.warn('Existing Inventory Was Pressed');}}/>
+        <View style={styles.buttonContainer}>
+          <StyledButton type='primary' content='Custom Order' onPress={()=>{console.warn('Custom Order Was Pressed');}}/>
+          <StyledButton type='secondary' content='Existing Inventory' onPress={()=>{console.warn('Existing Inventory Was Pressed');}}/>
+        </View>
         
 
       </View>
